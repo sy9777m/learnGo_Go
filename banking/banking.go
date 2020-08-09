@@ -27,7 +27,7 @@ func (a *Account) Balance() int {
 // Withdraw amount of your account
 func (a *Account) Withdraw(amount int) error {
 	if a.balance < amount {
-		return errors.New("Can't withdraw. You are poor.")
+		return errors.New("can't withdraw. you are poor")
 	}
 	a.balance -= amount
 	return nil
