@@ -1,14 +1,18 @@
 package main
 
 import (
-	"github.com/sy9777m/learnGo/dict"
+	"fmt"
+	"time"
 )
 
 func main() {
-	dictionary := dict.Dictionary{"first": "First word"}
-	word := "hello"
-	errAdd := dictionary.Add(word, "first")
-	errUpdate := dictionary.Update(word, "Second")
-	search, _ := dictionary.Search(word)
+	go sexyCount("nico")
+	sexyCount("flynn")
+}
 
+func sexyCount(person string) {
+	for i := 0; i < 10; i++ {
+		fmt.Println(person, "is sexy", i)
+		time.Sleep(time.Second)
+	}
 }
