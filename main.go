@@ -1,18 +1,14 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/sy9777m/learnGo/banking"
+	"github.com/sy9777m/learnGo/dict"
 )
 
 func main() {
-	account := banking.NewAccount("nico")
-	account.Deposit(10)
-	fmt.Println(account.Balance())
-	err := account.Withdraw(20)
-	if err != nil {
-		fmt.Println(err)
-	}
+	dictionary := dict.Dictionary{"first": "First word"}
+	word := "hello"
+	errAdd := dictionary.Add(word, "first")
+	errUpdate := dictionary.Update(word, "Second")
+	search, _ := dictionary.Search(word)
 
 }
